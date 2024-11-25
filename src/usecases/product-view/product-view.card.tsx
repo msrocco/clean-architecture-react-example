@@ -6,9 +6,7 @@ export interface ProductViewCardProps {
   id: string;
 }
 
-export const ProductViewCard: React.FC<ProductViewCardProps> = function (
-  props
-) {
+export const ProductViewCard: React.FC<ProductViewCardProps> = function (props) {
   const { product, services } = useProductViewController(props);
 
   if (!product.data) return <p>Loading</p>;
@@ -20,9 +18,7 @@ export const ProductViewCard: React.FC<ProductViewCardProps> = function (
       <div className="p-4 w-full h-full flex flex-col justify-between">
         <div className="flex flex-col gap-1">
           <p className="text-gray-900 font-bold text-lg">{product.data.name}</p>
-          <p className="text-gray-900">
-            {services.getFormattedPrice(product.data)}
-          </p>
+          <p className="text-gray-900">{services.getFormattedPrice(product.data)}</p>
         </div>
 
         <button className="w-full h-12 bg-black">Add to Bag</button>
